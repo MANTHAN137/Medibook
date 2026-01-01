@@ -1,0 +1,294 @@
+/* Doctor Profile Page Styles */
+
+.doctor-profile-page {
+    padding: calc(72px + var(--space-xl)) 0 var(--space-3xl);
+    min-height: 100vh;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-xl);
+    transition: color var(--transition-fast);
+}
+
+.back-button:hover {
+    color: var(--primary-400);
+}
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+/* Doctor Info Card */
+.doctor-info-card {
+    padding: var(--space-xl);
+}
+
+.doctor-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.doctor-avatar-large {
+    width: 100px;
+    height: 100px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.doctor-details .doctor-name {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin: 0 0 var(--space-xs);
+}
+
+.doctor-details .doctor-specialization {
+    font-size: var(--font-size-lg);
+    color: var(--accent-500);
+    margin: 0 0 var(--space-md);
+}
+
+.doctor-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(234, 179, 8, 0.1);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+}
+
+.doctor-rating svg {
+    color: var(--warning-400);
+}
+
+.rating-label {
+    font-weight: 400;
+    color: var(--text-tertiary);
+    margin-left: var(--space-xs);
+}
+
+/* Doctor Meta */
+.doctor-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.meta-item {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.meta-item svg {
+    color: var(--primary-400);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.meta-item strong {
+    display: block;
+    font-size: var(--font-size-base);
+}
+
+.meta-item span {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+}
+
+/* Doctor About */
+.doctor-about {
+    margin-bottom: var(--space-xl);
+}
+
+.doctor-about h3,
+.doctor-contact h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
+.doctor-about p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Contact */
+.contact-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--text-secondary);
+}
+
+.contact-item svg {
+    color: var(--text-muted);
+}
+
+/* Booking Card */
+.booking-card {
+    padding: var(--space-xl);
+    position: sticky;
+    top: calc(72px + var(--space-lg));
+}
+
+.booking-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.booking-step {
+    margin-bottom: var(--space-xl);
+}
+
+.booking-step h4 {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-md);
+}
+
+.selected-date {
+    font-size: var(--font-size-sm);
+    color: var(--primary-400);
+    margin-bottom: var(--space-md);
+}
+
+.slots-loading {
+    padding: var(--space-xl);
+    display: flex;
+    justify-content: center;
+}
+
+/* Booking Action */
+.booking-action {
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--glass-border);
+}
+
+.booking-summary {
+    background: var(--bg-tertiary);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+}
+
+.booking-summary p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.booking-summary p+p {
+    margin-top: var(--space-xs);
+}
+
+/* Booking Form */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.form-row {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.form-row-2>* {
+    flex: 1;
+}
+
+.modal-booking-summary {
+    background: var(--bg-tertiary);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+}
+
+.modal-booking-summary h4 {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-sm);
+}
+
+.modal-booking-summary p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.modal-booking-summary p+p {
+    margin-top: var(--space-xs);
+}
+
+/* Not Found */
+.not-found {
+    text-align: center;
+    padding: var(--space-3xl);
+}
+
+.not-found h2 {
+    margin-bottom: var(--space-md);
+}
+
+.not-found p {
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-lg);
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .doctor-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .doctor-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row-2 {
+        flex-direction: column;
+    }
+}

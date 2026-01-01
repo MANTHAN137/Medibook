@@ -1,0 +1,72 @@
+/* Card Component Styles */
+
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--glass-shadow);
+}
+
+/* Padding Variants */
+.card-padding-sm {
+    padding: var(--space-md);
+}
+
+.card-padding-md {
+    padding: var(--space-lg);
+}
+
+.card-padding-lg {
+    padding: var(--space-xl);
+}
+
+.card-padding-none {
+    padding: 0;
+}
+
+/* Hover Effect */
+.card-hover {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+/* Clickable */
+.card-clickable {
+    cursor: pointer;
+}
+
+/* Card Header */
+.card-header {
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--glass-border);
+    margin-bottom: var(--space-md);
+}
+
+/* Card Title */
+.card-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Card Content */
+.card-content {
+    color: var(--text-secondary);
+}
+
+/* Card Footer */
+.card-footer {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--glass-border);
+    margin-top: var(--space-md);
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: flex-end;
+}

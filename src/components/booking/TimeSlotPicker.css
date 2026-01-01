@@ -1,0 +1,137 @@
+/* Time Slot Picker Styles */
+
+.time-slot-picker {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.slot-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.slot-group-title {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: var(--space-sm);
+}
+
+.slot-btn {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-align: center;
+    transition: all var(--transition-fast);
+    border: 1px solid transparent;
+}
+
+/* Available State */
+.slot-btn.available {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--glass-border);
+    cursor: pointer;
+}
+
+.slot-btn.available:hover {
+    background: var(--primary-500);
+    border-color: var(--primary-500);
+    color: white;
+}
+
+/* Selected State */
+.slot-btn.selected {
+    background: var(--primary-500) !important;
+    border-color: var(--primary-500) !important;
+    color: white !important;
+    box-shadow: 0 0 20px rgba(0, 119, 182, 0.4);
+}
+
+/* Booked State */
+.slot-btn.booked {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--error-400);
+    border-color: rgba(239, 68, 68, 0.3);
+    cursor: not-allowed;
+}
+
+/* Blocked State */
+.slot-btn.blocked {
+    background: rgba(156, 163, 175, 0.1);
+    color: var(--text-muted);
+    border-color: rgba(156, 163, 175, 0.3);
+    cursor: not-allowed;
+}
+
+/* Past State */
+.slot-btn.past {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Unavailable State */
+.slot-btn.unavailable {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Legend */
+.slot-legend {
+    display: flex;
+    gap: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--glass-border);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-dot.available {
+    background: var(--primary-500);
+}
+
+.legend-dot.booked {
+    background: var(--error-500);
+}
+
+.legend-dot.blocked {
+    background: var(--text-muted);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .slot-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .slot-legend {
+        flex-wrap: wrap;
+        gap: var(--space-md);
+    }
+}
