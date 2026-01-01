@@ -1,0 +1,194 @@
+/* Patient Appointments Page Styles */
+
+.patient-appointments-page {
+    min-height: 100vh;
+    padding: var(--space-xl) 0;
+    padding-top: calc(72px + var(--space-xl));
+}
+
+.patient-appointments-page .page-header {
+    margin-bottom: var(--space-xl);
+}
+
+.patient-appointments-page .page-header h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+}
+
+.patient-appointments-page .page-header p {
+    color: var(--text-secondary);
+}
+
+.patient-appointments-page .search-section {
+    margin-bottom: var(--space-xl);
+    max-width: 500px;
+}
+
+/* Appointments Section */
+.appointments-section {
+    margin-bottom: var(--space-2xl);
+}
+
+.appointments-section h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+    color: var(--text-primary);
+}
+
+.appointments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-lg);
+}
+
+/* Appointment Card */
+.patient-appointments-page .appointment-card {
+    padding: var(--space-lg);
+}
+
+.patient-appointments-page .appointment-card.past {
+    opacity: 0.8;
+}
+
+.patient-appointments-page .appointment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-lg);
+}
+
+.patient-appointments-page .doctor-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.patient-appointments-page .doctor-avatar {
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: var(--font-size-base);
+}
+
+.patient-appointments-page .doctor-info h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin: 0;
+}
+
+.patient-appointments-page .specialization {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+}
+
+.patient-appointments-page .status-badge {
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Appointment Details */
+.patient-appointments-page .appointment-details {
+    margin-bottom: var(--space-lg);
+}
+
+.patient-appointments-page .detail-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.patient-appointments-page .detail-row svg {
+    color: var(--primary-400);
+    flex-shrink: 0;
+}
+
+.patient-appointments-page .reason-text {
+    margin-top: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+/* Appointment Actions */
+.patient-appointments-page .appointment-actions {
+    display: flex;
+    gap: var(--space-sm);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--glass-border);
+}
+
+/* Empty State */
+.patient-appointments-page .empty-state {
+    text-align: center;
+    padding: var(--space-2xl);
+}
+
+.patient-appointments-page .empty-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-md);
+}
+
+.patient-appointments-page .empty-state h3 {
+    margin-bottom: var(--space-sm);
+}
+
+.patient-appointments-page .empty-state p {
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-lg);
+}
+
+/* Modal Content */
+.cancel-modal-content,
+.edit-modal-content {
+    padding: var(--space-md) 0;
+}
+
+.cancel-modal-content p,
+.edit-modal-content p {
+    margin-bottom: var(--space-lg);
+    color: var(--text-secondary);
+}
+
+.modal-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: flex-end;
+    margin-top: var(--space-xl);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .patient-appointments-page {
+        padding: var(--space-md);
+        padding-top: calc(72px + var(--space-md));
+    }
+
+    .appointments-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .patient-appointments-page .appointment-header {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+}

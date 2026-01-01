@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import DoctorList from './pages/DoctorList';
 import DoctorProfile from './pages/DoctorProfile';
 import BookingSuccess from './pages/BookingSuccess';
+import PatientAppointments from './pages/PatientAppointments';
 
 // Doctor Pages
 import Login from './pages/doctor/Login';
@@ -66,6 +67,7 @@ function AppRoutes() {
             <Route path="/doctors" element={<PatientLayout><DoctorList /></PatientLayout>} />
             <Route path="/doctor/:id" element={<PatientLayout><DoctorProfile /></PatientLayout>} />
             <Route path="/booking-success" element={<PatientLayout><BookingSuccess /></PatientLayout>} />
+            <Route path="/my-appointments" element={<PatientAppointments />} />
 
             {/* Doctor Auth Routes */}
             <Route path="/doctor/login" element={<Login />} />

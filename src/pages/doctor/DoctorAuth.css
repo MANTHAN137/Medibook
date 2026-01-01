@@ -208,3 +208,43 @@
         display: none;
     }
 }
+
+/* Social Divider */
+.social-divider {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin: var(--space-xl) 0;
+}
+
+.social-divider::before,
+.social-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--glass-border);
+}
+
+.social-divider span {
+    color: var(--text-tertiary);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+}
+
+/* Google Sign-In Button */
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.google-btn svg {
+    flex-shrink: 0;
+}
+
+.google-btn:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--primary-400);
+}

@@ -5,13 +5,16 @@ import {
     createUserWithEmailAndPassword,
     signOut,
     onAuthStateChanged,
-    sendPasswordResetEmail
+    sendPasswordResetEmail,
+    GoogleAuthProvider,
+    signInWithPopup
 } from 'firebase/auth';
 import { auth, isConfigured } from '../firebase/config';
 import { getDoctorByEmail, createDoctor } from '../firebase/services';
 import { Spinner } from '../components/common/Loader';
 
 const AuthContext = createContext(null);
+const googleProvider = new GoogleAuthProvider();
 
 export const useAuth = () => {
     const context = useContext(AuthContext);
@@ -64,6 +67,39 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    // Google Sign-In
+    const loginWithGoogle = async () => {
+        try {
+            const result = await signInWithPopup(auth, googleProvider);
+            const firebaseUser = result.user;
+
+            // Check if doctor profile exists
+            let doctor = await getDoctorByEmail(firebaseUser.email);
+
+            if (!doctor) {
+                // Create a new doctor profile for Google sign-in users
+                doctor = await createDoctor({
+                    email: firebaseUser.email,
+                    name: firebaseUser.displayName || 'Doctor',
+                    phone: firebaseUser.phoneNumber || '',
+                    specialization: 'General Physician',
+                    experience: '',
+                    clinicName: '',
+                    clinicAddress: '',
+                    about: '',
+                    uid: firebaseUser.uid,
+                    photoURL: firebaseUser.photoURL || ''
+                });
+            }
+
+            setDoctorData(doctor);
+            return { success: true, user: firebaseUser, isNewUser: !doctor };
+        } catch (error) {
+            console.error('Google sign-in error:', error);
+            return { success: false, error: getAuthErrorMessage(error.code) };
+        }
+    };
+
     const register = async (email, password, doctorInfo) => {
         try {
             const result = await createUserWithEmailAndPassword(auth, email, password);
@@ -111,6 +147,7 @@ export const AuthProvider = ({ children }) => {
         doctorData,
         loading,
         login,
+        loginWithGoogle,
         register,
         logout,
         resetPassword,
@@ -146,6 +183,10 @@ const getAuthErrorMessage = (code) => {
             return 'Please enter a valid email address.';
         case 'auth/too-many-requests':
             return 'Too many failed attempts. Please try again later.';
+        case 'auth/popup-closed-by-user':
+            return 'Sign-in popup was closed. Please try again.';
+        case 'auth/cancelled-popup-request':
+            return 'Sign-in was cancelled. Please try again.';
         default:
             return 'An error occurred. Please try again.';
     }

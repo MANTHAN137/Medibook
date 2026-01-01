@@ -11,6 +11,7 @@ const Navbar = () => {
     const navLinks = [
         { path: '/', label: 'Home' },
         { path: '/doctors', label: 'Find Doctors' },
+        { path: '/my-appointments', label: 'My Appointments' },
         { path: '/about', label: 'About' },
     ];
 

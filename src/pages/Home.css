@@ -34,6 +34,7 @@
     color: var(--primary-300);
     font-size: var(--font-size-sm);
     font-weight: 500;
+    margin-top: var(--space-xl);
     margin-bottom: var(--space-lg);
 }
 
