@@ -5,10 +5,12 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
+import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCxq8_sOUtbVLWirhJsx69d9ixBXLta_HA",
   authDomain: "medibook-6a017.firebaseapp.com",
+  databaseURL: "https://medibook-6a017-default-rtdb.firebaseio.com",
   projectId: "medibook-6a017",
   storageBucket: "medibook-6a017.firebasestorage.app",
   messagingSenderId: "64715730094",
@@ -25,5 +27,7 @@ const app = initializeApp(firebaseConfig);
 // Initialize services
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export const realtimeDb = getDatabase(app);
 
 export default app;
+
